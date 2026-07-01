@@ -1,0 +1,133 @@
+.story__title {
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.story__title.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.story__timeline {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+/* Vertical Gold Timeline Line */
+.story__line {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 20px; /* Aligned to left on mobile */
+  width: 2px;
+  background: linear-gradient(to bottom, transparent 0%, #d4af37 15%, #d4af37 85%, transparent 100%);
+  z-index: 1;
+}
+
+.story__item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 45px; /* Offset text from line */
+  
+  /* Initial Reveal State */
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.story__item.reveal {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Timeline Node */
+.story__node {
+  position: absolute;
+  left: 9px; /* Centered on the 2px line */
+  top: 10px;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle, #ffffff 0%, #faf6f0 100%);
+  border: 2.5px solid #d4af37;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.story__node-icon {
+  color: #611818;
+  font-size: 0.65em;
+  display: flex;
+}
+
+.story__item:hover .story__node {
+  transform: scale(1.2);
+  background: #ffdf7a;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+}
+
+/* Event Detail Card */
+.story__card {
+  width: 100%;
+  background: linear-gradient(135deg, #ffffff 0%, #faf8f5 100%);
+  border: 1.5px solid #d4af37;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 5px 15px rgba(120, 80, 75, 0.05);
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.story__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(120, 80, 75, 0.12);
+  border-color: #e5c060;
+}
+
+/* Date Caption */
+.story__date {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #8c6c58;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Story Title */
+.story__card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.05em;
+  font-weight: 700;
+  color: #611818;
+  margin: 0 0 6px 0;
+  letter-spacing: 0.5px;
+}
+
+/* Story Description */
+.story__desc {
+  font-family: 'Lora', serif;
+  font-size: 0.85em;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}

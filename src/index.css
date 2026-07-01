@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Lora', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: rgb(95, 25, 25);
+  /* Default font color */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1,
+h2,
+h3,
+.title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: #611818;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@font-face {
+  font-family: 'GangwonEdu_OTFBoldA';
+  src: url('fonts/GangwonEduAll_Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'GangwonEdu';
+  src: url('fonts/GangwonEduAll_Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'BookkMyungjo-Bd';
+  src: url('fonts/BookkMyungjo_Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'BookkMyungjo';
+  src: url('fonts/BookkMyungjo_Light.woff') format('woff');
+}

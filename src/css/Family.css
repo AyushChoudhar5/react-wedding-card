@@ -1,0 +1,106 @@
+.family__container-theme {
+  background: linear-gradient(180deg, #FBF0E6 0%, #FFFBF5 100%) !important;
+  box-sizing: border-box;
+  padding: 60px 15px 70px 15px !important;
+  width: 100%;
+}
+
+.family__title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #611818;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+.family__cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 35px;
+}
+
+/* Family Plaque Cards */
+.family__card {
+  background: linear-gradient(135deg, #ffffff 0%, #faf8f5 100%);
+  border: 1.5px solid #d4af37;
+  border-radius: 12px;
+  padding: 24px 18px;
+  box-shadow: 0 6px 18px rgba(120, 80, 75, 0.06);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.family__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(212, 175, 55, 0.15);
+  border-color: #e5c060;
+}
+
+.family__parents {
+  font-family: 'Lora', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #5b3a34;
+  margin-bottom: 8px;
+}
+
+.family__parents .amp {
+  color: #d4af37;
+  font-family: 'Cinzel', serif;
+}
+
+.family__relation {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #d4af37;
+  letter-spacing: 1.5px;
+  border: 1px solid #d4af37;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 12px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.family__child {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #611818;
+  letter-spacing: 0.5px;
+}
+
+/* Contact Button Styling */
+.family__btn-contact {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: #611818;
+  color: #ffdf7a;
+  border: 1px solid #d4af37;
+  padding: 14px 35px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(97, 24, 24, 0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.family__btn-contact:hover {
+  transform: translateY(-2px) scale(1.03);
+  background-color: #7a2222;
+  box-shadow: 0 6px 18px rgba(97, 24, 24, 0.35);
+}
+
+.family__btn-contact:active {
+  transform: translateY(1px);
+}

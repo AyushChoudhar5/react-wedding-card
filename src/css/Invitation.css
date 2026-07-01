@@ -1,0 +1,64 @@
+.invitation__title {
+  font-family: 'Cinzel', serif;
+  font-size: x-large;
+  font-weight: 700;
+  color: #611818;
+}
+
+
+.invitation__content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.invitation__content div {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  color: rgb(95, 25, 25);
+  line-height: 1.6;
+}
+
+.invitation__word {
+  opacity: 0;
+  display: inline-block;
+}
+
+.invitation__family {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: x-large;
+  margin: 15px 0;
+}
+
+.invitaion__parent {
+  margin: 5px 0;
+  font-weight: bold;
+  font-family: 'BookkMyungjo-Bd';
+  text-align: center;
+}
+
+.invitation__child {
+  margin-top: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.invitation__btn-contact {
+  font-family: 'Montserrat', sans-serif;
+  font-size: large;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  border: 1px solid rgb(134, 128, 128);
+  background-color: transparent;
+  border-radius: 30px;
+  padding: 10px 50px;
+}
+
+.invitation__btn-contact:hover {
+  background-color: rgb(243, 180, 180);
+}
