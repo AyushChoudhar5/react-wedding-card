@@ -1,51 +1,50 @@
 import React, { useState } from 'react';
 import '../css/Quiz.css';
-
-const questions = [
-    {
-      questionText: 'Which of the following is our honeymoon destination?',
-      correctAnswer: 'We are traveling to the UK and Spain.',
-      answerOptions: [
-        { answerText: 'Australia', isCorrect: false },
-        { answerText: 'Canada', isCorrect: false },
-        { answerText: 'Switzerland', isCorrect: false },
-        { answerText: 'United Kingdom', isCorrect: true },
-        { answerText: 'Spain', isCorrect: true },
-      ],
-    },
-    {
-      questionText: 'Which country have we NOT traveled to together?',
-      correctAnswer: 'We have never traveled to Vietnam together.',
-      answerOptions: [
-        { answerText: 'Japan', isCorrect: false },
-        { answerText: 'Hong Kong', isCorrect: false },
-        { answerText: 'Macau', isCorrect: false },
-        { answerText: 'Laos', isCorrect: false },
-        { answerText: 'Vietnam', isCorrect: true },
-      ],
-    },
-    {
-      questionText: 'Which activity have we NOT done together?',
-      correctAnswer: 'We have never been to Lotte World together. We have been to Gyeongju World, E-World, and Disneyland together.',
-      answerOptions: [
-        { answerText: 'Running a 10km marathon', isCorrect: false },
-        { answerText: 'Hiking Hallasan Mountain', isCorrect: false },
-        { answerText: 'Surfing at Mallipo Beach', isCorrect: false },
-        { answerText: 'Riding amusement rides at Lotte World', isCorrect: true },
-        { answerText: 'Playing games at a PC bang (gaming cafe)', isCorrect: false },
-      ],
-    }
-  ];
-
+import { useLanguage } from '../context/LanguageContext';
 
 function Quiz() {
-
+    const { t, language } = useLanguage();
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
     const [answerFeedback, setAnswerFeedback] = useState(null);
     const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
 
+    const questions = [
+      {
+        questionText: t('q1Text'),
+        correctAnswer: t('q1Correct'),
+        answerOptions: [
+          { answerText: t('q1Options')[0], isCorrect: false },
+          { answerText: t('q1Options')[1], isCorrect: false },
+          { answerText: t('q1Options')[2], isCorrect: false },
+          { answerText: t('q1Options')[3], isCorrect: true },
+          { answerText: t('q1Options')[4], isCorrect: true },
+        ],
+      },
+      {
+        questionText: t('q2Text'),
+        correctAnswer: t('q2Correct'),
+        answerOptions: [
+          { answerText: t('q2Options')[0], isCorrect: false },
+          { answerText: t('q2Options')[1], isCorrect: false },
+          { answerText: t('q2Options')[2], isCorrect: false },
+          { answerText: t('q2Options')[3], isCorrect: false },
+          { answerText: t('q2Options')[4], isCorrect: true },
+        ],
+      },
+      {
+        questionText: t('q3Text'),
+        correctAnswer: t('q3Correct'),
+        answerOptions: [
+          { answerText: t('q3Options')[0], isCorrect: false },
+          { answerText: t('q3Options')[1], isCorrect: false },
+          { answerText: t('q3Options')[2], isCorrect: false },
+          { answerText: t('q3Options')[3], isCorrect: true },
+          { answerText: t('q3Options')[4], isCorrect: false },
+        ],
+      }
+    ];
 
     const handleAnswerButtonClick = (correctAnswer, isCorrect, index) => {
         const nextQuestion = currentQuestion + 1;
@@ -53,9 +52,9 @@ function Quiz() {
     
         if (isCorrect) {
           setScore(score + 1);
-          setAnswerFeedback(`Correct!`);
+          setAnswerFeedback(t('quizCorrect'));
         } else {
-          setAnswerFeedback(`Incorrect! ${correctAnswer}`);
+          setAnswerFeedback(t('quizIncorrect', { correctAnswer }));
         }
     
         setTimeout(() => {
@@ -78,17 +77,23 @@ function Quiz() {
 
   return (
     <div className='container bc-pink'>
-        <div className='title'>Surprise Quiz</div>
+        <div className='title'>{t('quizTitle')}</div>
         {showScore ? (
         <div className='score-section'>
-          <div>You answered <span className='my-score'>{score} out of {questions.length}</span> questions correctly!</div>
-          <button onClick={handleRestart} className='restart-button'>Try Again</button> 
+          <div>
+            {language === 'mr' ? (
+              <>तुम्ही {questions.length} पैकी <span className='my-score'>{score}</span> प्रश्नांची उत्तरे बरोबर दिली आहेत!</>
+            ) : (
+              <>You answered <span className='my-score'>{score} out of {questions.length}</span> questions correctly!</>
+            )}
+          </div>
+          <button onClick={handleRestart} className='restart-button'>{t('quizTryAgain')}</button> 
         </div>
         ) : (
             <>
             <div className='question-section'>
                 <div className='question-count'>
-                <span>Question {currentQuestion + 1}</span>/{questions.length}
+                  <span>{language === 'mr' ? `प्रश्न ${currentQuestion + 1}` : `Question ${currentQuestion + 1}`}</span>/{questions.length}
                 </div>
                 <div className='question-text'>
                   <div>Yogesh ♥ Dipali</div>
@@ -113,4 +118,4 @@ function Quiz() {
   )
 }
 
-export default Quiz
+export default Quiz;

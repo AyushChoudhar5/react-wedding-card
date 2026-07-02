@@ -1,17 +1,19 @@
 import React from 'react'
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { useLanguage } from '../context/LanguageContext';
 
 function Location() {
+  const { t } = useLanguage();
   const gotoGooglemap = () => {
     window.open('https://maps.google.com/?q=Saileela%20Garden%20Mangal%20Karyalaya,%20Alephata', '_blank');
   }
 
   return (
     <div className='container location__container-theme'>
-      <div className='title'>Location & Directions</div>
+      <div className='title'>{t('locTitle')}</div>
       <div className='location__details'>
-        <div>Saileela Garden Mangal Karyalaya</div>
-        <div>Nashik Road, Alephata</div>
+        <div>{t('locVenue')}</div>
+        <div>{t('locAddr')}</div>
       </div>
       
       <iframe
@@ -26,12 +28,12 @@ function Location() {
       <div className='location__map-icon-box' style={{ justifyContent: 'center' }}>
           <div className='location__map-item' onClick={gotoGooglemap} style={{ padding: '10px 20px', borderRadius: '5px' }}>
             <FaMapMarkerAlt className='location__map-icon' size="1.2em" color="#EA4335"/>
-            <span>Open in Google Maps</span>
+            <span>{t('locMapBtn')}</span>
           </div>
       </div>
 
       <div className='location__info'>
-        <div>Located on the Pune-Nashik Highway</div>
+        <div>{t('locHighway')}</div>
       </div>
     </div>
   )

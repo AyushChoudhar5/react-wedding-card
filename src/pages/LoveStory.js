@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import { GoHeartFill } from "react-icons/go";
 import { GiCoffeeCup, GiRingBox } from "react-icons/gi";
 import { BiCameraMovie } from "react-icons/bi";
 
 function LoveStory() {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -31,34 +33,34 @@ function LoveStory() {
 
   const stories = [
     {
-      title: "First Meet",
-      date: "August 2024",
-      desc: "Where it all began... A sweet conversation and a chance encounter that instantly bloomed into something special.",
+      title: t('meetTitle'),
+      date: t('meetDate'),
+      desc: t('meetDesc'),
       icon: <GiCoffeeCup size="1.2em" />
     },
     {
-      title: "First Date",
-      date: "September 2024",
-      desc: "An unforgettable evening filled with endless laughter, shared dreams, and the quiet realization of a lifetime connection.",
+      title: t('dateTitle'),
+      date: t('dateDate'),
+      desc: t('dateDesc'),
       icon: <BiCameraMovie size="1.2em" />
     },
     {
-      title: "Our Engagement",
-      date: "July 6, 2026",
-      desc: "Exchanging rings and promising to walk hand-in-hand forever under the blessings of our parents and loved ones.",
+      title: t('engTitle'),
+      date: t('engDate'),
+      desc: t('engDesc'),
       icon: <GiRingBox size="1.2em" />
     },
     {
-      title: "The Wedding Day",
-      date: "July 7, 2026",
-      desc: "The beginning of our new chapter—starting our journey as husband and wife, bound by love, forever and always.",
+      title: t('wedTitle'),
+      date: t('wedDate'),
+      desc: t('wedDesc'),
       icon: <GoHeartFill size="1.2em" />
     }
   ];
 
   return (
     <div className="container" ref={sectionRef}>
-      <div className={`title story__title ${isVisible ? 'reveal' : ''}`}>Our Love Story</div>
+      <div className={`title story__title ${isVisible ? 'reveal' : ''}`}>{t('storyTitle')}</div>
       
       <div className="story__timeline">
         <div className="story__line"></div>

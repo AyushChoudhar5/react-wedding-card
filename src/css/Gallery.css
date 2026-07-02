@@ -1,13 +1,88 @@
-.image-gallery {
-  width: 320px;
+.gallery__scroll-pin-wrapper {
+  width: 100%;
+  height: 300vh; /* Scroll track length (300% window height) */
+  background: linear-gradient(180deg, #FFFBF5 0%, #FBF0E6 100%) !important;
+  position: relative;
+  box-sizing: border-box;
 }
 
-
-.image-gallery-fullscreen-button .image-gallery-svg, 
-.image-gallery-play-button .image-gallery-svg {
-  display: none;
+.gallery__scroll-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 30px 15px;
 }
 
-.image-gallery-thumbnail-image {
-  /* display: none; */
+.gallery__scroll-title {
+  margin-top: 0 !important;
+  margin-bottom: 25px !important;
+  z-index: 10;
+}
+
+.gallery__scroll-deck {
+  position: relative;
+  width: 290px;
+  height: 350px;
+  perspective: 1200px;
+  margin-bottom: 10px;
+}
+
+.gallery__scroll-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  padding: 12px; /* Balanced uniform padding since we have no captions */
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(97, 24, 24, 0.15), 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  transform-origin: center center;
+  will-change: transform, opacity;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery__scroll-card:first-child {
+  transform: rotate(-2.5deg);
+}
+
+/* Polaroid inner wrapper */
+.gallery__polaroid-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery__polaroid-img-box {
+  width: 100%;
+  height: 100%; /* Take 100% of card height now */
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 2px;
+  position: relative;
+  background-color: #f7eae5;
+}
+
+.gallery__polaroid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Confetti particles */
+.gallery__confetti-particle {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform, opacity;
 }

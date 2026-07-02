@@ -2,19 +2,21 @@ import React, { useEffect, useRef } from 'react';
 import flower from '../images/flower.png';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLanguage } from '../context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Invitation() {
   const containerRef = useRef(null);
+  const { t } = useLanguage();
   
   const paragraphLines = [
-    "We have cherished our precious relationship until now.",
-    "For the rest of our lives, we want to become a family,",
-    "look in the same direction,",
-    "and walk together.",
-    "We would be deeply grateful",
-    "if you would join us to bless our new beginning."
+    t('invitationLine1'),
+    t('invitationLine2'),
+    t('invitationLine3'),
+    t('invitationLine4'),
+    t('invitationLine5'),
+    t('invitationLine6')
   ];
 
   useEffect(() => {
@@ -75,7 +77,7 @@ function Invitation() {
   return (
     <div className='bc-pink container' ref={containerRef}>
       <img src={flower} className='flower' alt='flower' />
-      <div className='invitation__title'>You are Invited</div>
+      <div className='invitation__title'>{t('invitationTitle')}</div>
       <div className='invitation__content'>
         {paragraphLines.map((line, lineIdx) => (
           <div key={lineIdx}>

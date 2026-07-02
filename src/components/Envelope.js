@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import { GoHeartFill } from "react-icons/go";
 import { BsStarFill } from "react-icons/bs";
 
 function Envelope({ onOpen }) {
+  const { t } = useLanguage();
   const [confetti, setConfetti] = useState([]);
   const [hasOpened, setHasOpened] = useState(false);
 
@@ -502,11 +504,11 @@ function Envelope({ onOpen }) {
             <div className="envelope__letter-heart">
               <GoHeartFill size="1.8em" color="rgb(214, 69, 69)" className="pulse-slow" />
             </div>
-            <div className="envelope__letter-title">Wedding Invitation</div>
-            <div className="envelope__letter-names">Yogesh &amp; Dipali</div>
+            <div className="envelope__letter-title">{t('envelopeTitle')}</div>
+            <div className="envelope__letter-names">{t('envelopeNames')}</div>
             <div className="envelope__letter-divider"></div>
-            <div className="envelope__letter-date">July 7, 2026</div>
-            <div className="envelope__letter-time">Alephata</div>
+            <div className="envelope__letter-date">{t('envelopeDate')}</div>
+            <div className="envelope__letter-time">{t('envelopePlace')}</div>
           </div>
         </div>
 
@@ -542,8 +544,8 @@ function Envelope({ onOpen }) {
       </div>
 
       <div className="envelope__instruction">
-        <span className="instruction-text">You are cordially invited</span>
-        <span className="instruction-sub">Tap to Open Envelope</span>
+        <span className="instruction-text">{t('envelopeInvite')}</span>
+        <span className="instruction-sub">{t('envelopeTap')}</span>
       </div>
 
       {/* Luxury Background Particles */}

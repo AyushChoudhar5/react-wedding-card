@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
+import { useLanguage } from '../context/LanguageContext';
 import mainPhoto from '../images/Screenshot 2026-07-02 140706.png'
 import { TbPlayerTrackPrevFilled, TbPlayerSkipBackFilled, TbPlayerSkipForwardFilled, TbPlayerTrackNextFilled } from "react-icons/tb";
 import { BsPlayCircle, BsStopCircle } from "react-icons/bs";
@@ -7,6 +8,7 @@ import myMusic from '../media/Saaj-Hyo-Tuza.mp3';
 
 
 function Cover({ startAnimation }) {
+  const { t } = useLanguage();
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [balloons, setBalloons] = useState([]);
@@ -51,6 +53,8 @@ function Cover({ startAnimation }) {
   }, [startAnimation]);
 
   useEffect(() => {
+    if (!startAnimation) return;
+
     const audio = audioRef.current;
     audio.currentTime = 23.3;
 
@@ -81,7 +85,7 @@ function Cover({ startAnimation }) {
       cleanupListeners();
       audio.pause();
     };
-  }, []);
+  }, [startAnimation]);
 
   return (
     <div className="container">
@@ -106,11 +110,11 @@ function Cover({ startAnimation }) {
       ))}
 
       <div className={`cover__title-wrap${startAnimation ? ' reveal' : ''}`}>
-        <span className="cover__title-eyebrow">Two Hearts, One Beginning</span>
+        <span className="cover__title-eyebrow">{t('coverEyebrow')}</span>
 
         <div className="title cover__title">
           <span className="cover__quote cover__quote--open">&ldquo;</span>
-          <span className="cover__title-text">We Are Getting Married</span>
+          <span className="cover__title-text">{t('coverMainTitle')}</span>
           <span className="cover__quote cover__quote--close">&rdquo;</span>
         </div>
 
@@ -181,12 +185,12 @@ function Cover({ startAnimation }) {
         </svg>
       </div>
       <div className='cover__person'>
-        <div>Mr. Yogesh S Ugle</div>
+        <div>{t('groomName')}</div>
         <GoHeartFill className='cover__icon-heart' size="0.8em" />
-        <div>Ms. Dipali G Sable</div>
+        <div>{t('brideName')}</div>
       </div>
-      <div className='cover__date'>Tuesday, July 7, 2026 at 1:45 PM</div>
-      <div className='cover__place'>Saileela Garden Mangal Karyalaya, Alephata</div>
+      <div className='cover__date'>{t('coverDate')}</div>
+      <div className='cover__place'>{t('coverPlace')}</div>
       <div className='cover__line'></div>
 
       <div className='cover__icon-box'>

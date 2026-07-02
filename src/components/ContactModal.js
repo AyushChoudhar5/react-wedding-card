@@ -1,18 +1,20 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { HiMail } from "react-icons/hi";
 
 function ContactModal({ closeModal }) {
+  const { t } = useLanguage();
   const contacts = [
-    { person: "Mr. Mangesh S Ugle (Brother of Groom)", phone: "7028835171" },
-    { person: "Mr. Yogesh S Ugle", phone: "9545106897" }
+    { person: t('groomBrother'), phone: "7028835171" },
+    { person: t('groomName'), phone: "9545106897" }
   ];
 
   return (
     <div className="survey">
       <div className="survey__content" style={{ textAlign: 'center', width: '320px' }}>
         <button onClick={closeModal} className="survey__btn-close">&times;</button>
-        <div className='survey__title' style={{ marginBottom: '25px' }}>Contact Details</div>
+        <div className='survey__title' style={{ marginBottom: '25px' }}>{t('contactTitle')}</div>
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginBottom: '25px' }}>
           {contacts.map((contact, index) => (
@@ -92,7 +94,7 @@ function ContactModal({ closeModal }) {
           className="survey__btn-submit"
           style={{ width: '100%', marginTop: '10px' }}
         >
-          Back
+          {t('backBtn')}
         </button>
       </div>
     </div>

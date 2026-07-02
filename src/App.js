@@ -20,10 +20,13 @@ import Calendar from './pages/Calendar.js';
 import Location from './pages/Location.js';
 import Events from './pages/Events.js';
 import LoveLetters from './pages/LoveLetters.js';
-// import ImgGallery from './pages/ImgGallery.js';
+import ImgGallery from './pages/ImgGallery.js';
 import Footer from './components/Footer.js';
 import SurveyModal from './components/SurveyModal.js';
 import Envelope from './components/Envelope.js';
+
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
+import LanguageSelect from './components/LanguageSelect';
 
 // Stable global particles to avoid jumps on component re-render
 const globalParticles = Array.from({ length: 18 }, (_, i) => ({
@@ -36,11 +39,12 @@ const globalParticles = Array.from({ length: 18 }, (_, i) => ({
   sway: Math.random() * 50 - 25,
 }));
 
-function App() {
+function MainApp() {
 
   const [isModalOpen, setIsModalOpen] = useState(false); // Keep modal closed initially
   const [isEnvelopeOpen, setIsEnvelopeOpen] = useState(false);
   const [showEnvelope, setShowEnvelope] = useState(true);
+  const { language } = useLanguage();
   
     // Function to close the modal
     const closeModal = () => {
@@ -61,8 +65,12 @@ function App() {
       }, 2500);
     };
 
+  if (language === null) {
+    return <LanguageSelect />;
+  }
+
   return (
-    <div className="App">
+    <div className={`App lang-${language || 'en'}`}>
       {showEnvelope && (
         <div className={`envelope-wrapper ${isEnvelopeOpen ? 'opening' : ''}`}>
           <Envelope onOpen={handleEnvelopeOpen} />
@@ -96,13 +104,21 @@ function App() {
       <Invitation />
       <Family />
       <Calendar />
-      {/* <ImgGallery /> */}
       <Location />
+      <ImgGallery />
       <Events />
       {/* <Submit openModal={openModal}/> */}
       <LoveLetters />
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <MainApp />
+    </LanguageProvider>
   );
 }
 

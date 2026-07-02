@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import flower from '../images/flower.png'
+import { useLanguage } from '../context/LanguageContext';
 
 
 function CalendarDay({ day, firstDayOfWeek, isWeddingDay, isHoliday, isSpotlight }) {
@@ -17,6 +18,7 @@ function CalendarDay({ day, firstDayOfWeek, isWeddingDay, isHoliday, isSpotlight
 }
 
 function Calendar() {
+  const { t, language } = useLanguage();
   const daysInMonth = 31; // July 2026 has 31 days
   const firstDayOfWeek = 3; // July 1, 2026 is Wednesday
   const emptyDays = Array.from({ length: firstDayOfWeek }, () => null);
@@ -86,11 +88,11 @@ function Calendar() {
   return (
     <div className='container calendar' ref={containerRef}>
       <img src={flower} className="flower" alt='flower' />
-      <h3>Tuesday, July 7, 2026 at 1:45 PM</h3>
+      <h3>{t('calTitleDate')}</h3>
       <div className='calendar__line'></div>
       <div className="calendar__body">
         <div className="calendar__weekdays">
-          {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
+          {t('weekdays').map((day) => (
             <span key={day}>{day}</span>
           ))}
         </div>
@@ -120,26 +122,32 @@ function Calendar() {
 
           <div className="countdown__section">
             <span className="countdown__value">{timeLeft.days}</span>
-            <span className="countdown__label">Days</span>
+            <span className="countdown__label">{t('days')}</span>
           </div>
           <div className="countdown__divider"></div>
           <div className="countdown__section">
             <span className="countdown__value">{timeLeft.hours}</span>
-            <span className="countdown__label">Hours</span>
+            <span className="countdown__label">{t('hours')}</span>
           </div>
           <div className="countdown__divider"></div>
           <div className="countdown__section">
             <span className="countdown__value">{timeLeft.minutes}</span>
-            <span className="countdown__label">Mins</span>
+            <span className="countdown__label">{t('mins')}</span>
           </div>
           <div className="countdown__divider"></div>
           <div className="countdown__section seconds">
             <span className="countdown__value">{timeLeft.seconds}</span>
-            <span className="countdown__label">Secs</span>
+            <span className="countdown__label">{t('secs')}</span>
           </div>
         </div>
       </div>
-      <div className="countdown__footer">The wedding of Yogesh ♥ Dipali is <span className='calendar__remain-day'>{timeLeft.days} days</span> away</div>
+      <div className="countdown__footer">
+        {language === 'mr' ? (
+          <>योगेश ♥ दिपाली यांच्या लग्नाला अजून <span className='calendar__remain-day'>{timeLeft.days} दिवस</span> बाकी आहेत</>
+        ) : (
+          <>The wedding of Yogesh ♥ Dipali is <span className='calendar__remain-day'>{timeLeft.days} days</span> away</>
+        )}
+      </div>
     </div>
   )
 }

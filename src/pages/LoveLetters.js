@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -16,6 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
  * ink-stroke word, closing with a small ornament.
  */
 function LoveLetters() {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const sectionRef = useRef(null);
@@ -50,7 +52,7 @@ function LoveLetters() {
 
   const resetTilt = () => setTilt({ x: 0, y: 0 });
 
-  const sentence = "Please do attend our wedding and bless us with your warm presence as we begin our new journey together!";
+  const sentence = t('loveLettersSentence');
   const words = sentence.split(" ");
 
   return (

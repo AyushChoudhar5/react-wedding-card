@@ -3,12 +3,14 @@ import ContactModal from '../components/ContactModal';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import posterImage from '../images/Picsart_26-07-02_13-43-04-396.jpg.jpeg';
+import { useLanguage } from '../context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Family() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const containerRef = useRef(null);
+  const { t } = useLanguage();
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -87,33 +89,33 @@ function Family() {
 
   return (
     <div className="container family__container-theme" ref={containerRef}>
-      <h2 className="family__title">With Blessings From</h2>
+      <h2 className="family__title">{t('familyTitle')}</h2>
       
       <div className="family__cards-container">
         <FamilyCard 
-          dad="Mr. Sakharam Ugle" 
-          mom="Mrs. Suman Ugle" 
-          relation="Son" 
-          child="Groom: Yogesh S Ugle" 
+          dad={t('groomDad')} 
+          mom={t('groomMom')} 
+          relation={t('groomRelation')} 
+          child={t('groomLabel')} 
         />
         <FamilyCard 
-          dad="Mr. Gabaji Sable" 
-          mom="Mrs. Sughandabai Sable" 
-          relation="Daughter" 
-          child="Bride: Dipali G Sable" 
+          dad={t('brideDad')} 
+          mom={t('brideMom')} 
+          relation={t('brideRelation')} 
+          child={t('brideLabel')} 
         />
       </div>
 
       <div className="family__btn-group">
         <button className="family__btn-contact" onClick={openModal}>
-          Contact Us
+          {t('contactBtn')}
         </button>
         <a 
           href={posterImage} 
           download="Wedding_Invitation_Poster.jpeg" 
           className="family__btn-download"
         >
-          Download Invitation
+          {t('downloadBtn')}
         </a>
       </div>
 
