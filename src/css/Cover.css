@@ -146,12 +146,163 @@
 /* ============================================================
    RESTORED MAIN COVER LAYOUT STYLES
    ============================================================ */
-.cover__main-photo {
-  width: 340px;
-  height: 340px;
+/* ============================================================
+   RESTORED MAIN COVER LAYOUT STYLES & WEDDING FRAME
+   ============================================================ */
+.cover__image-frame-container {
+  position: relative;
+  width: min(340px, 90vw);
+  height: min(340px, 90vw);
   margin-top: 15px;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  padding: 10px;
+  box-shadow: 
+    0 12px 30px rgba(97, 24, 24, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.05),
+    inset 0 0 15px rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 2;
+  overflow: visible;
+}
+
+.cover__image-frame-container:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(97, 24, 24, 0.18),
+    0 8px 16px rgba(212, 175, 55, 0.15),
+    inset 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+/* Pulsing ambient aura behind the frame */
+.cover__frame-glow-aura {
+  position: absolute;
+  inset: -12px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, rgba(212, 175, 55, 0) 70%);
+  border-radius: 20px;
+  z-index: -1;
+  pointer-events: none;
+  animation: coverAuraPulse 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes coverAuraPulse {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+/* Inner border box around photo */
+.cover__frame-inner-border {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 2px solid #D4AF37;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Diagonal sheen sweep */
+.cover__frame-inner-border::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 35%;
+  height: 200%;
+  background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.35) 30%, 
+    rgba(255, 255, 255, 0.75) 50%, 
+    rgba(255, 255, 255, 0.35) 70%, 
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: coverSheen 5s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes coverSheen {
+  0% { left: -70%; }
+  18% { left: 130%; }
+  100% { left: 130%; }
+}
+
+.cover__main-photo {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center 40%;
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.cover__image-frame-container:hover .cover__main-photo {
+  transform: scale(1.05);
+}
+
+/* Filigree Corner SVGs */
+.cover__frame-corner {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  pointer-events: none;
+  z-index: 10;
+  filter: drop-shadow(0 1.5px 3px rgba(0, 0, 0, 0.15));
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.cover__frame-corner--top-left {
+  top: -3px;
+  left: -3px;
+}
+
+.cover__frame-corner--top-right {
+  top: -3px;
+  right: -3px;
+  transform: scaleX(-1);
+}
+
+.cover__frame-corner--bottom-left {
+  bottom: -3px;
+  left: -3px;
+  transform: scaleY(-1);
+}
+
+.cover__frame-corner--bottom-right {
+  bottom: -3px;
+  right: -3px;
+  transform: scale(-1);
+}
+
+/* Interactive hover for filigree corners */
+.cover__image-frame-container:hover .cover__frame-corner--top-left {
+  transform: translate(-3px, -3px) scale(1.08);
+}
+
+.cover__image-frame-container:hover .cover__frame-corner--top-right {
+  transform: translate(3px, -3px) scaleX(-1) scale(1.08);
+}
+
+.cover__image-frame-container:hover .cover__frame-corner--bottom-left {
+  transform: translate(-3px, 3px) scaleY(-1) scale(1.08);
+}
+
+.cover__image-frame-container:hover .cover__frame-corner--bottom-right {
+  transform: translate(3px, 3px) scale(-1) scale(1.08);
 }
 
 .cover__person {

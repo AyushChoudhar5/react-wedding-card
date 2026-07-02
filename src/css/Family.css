@@ -78,8 +78,19 @@
   letter-spacing: 0.5px;
 }
 
-/* Contact Button Styling */
-.family__btn-contact {
+/* Button Group and Button Styling */
+.family__btn-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.family__btn-contact,
+.family__btn-download {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.88rem;
   font-weight: 600;
@@ -88,19 +99,26 @@
   background-color: #611818;
   color: #ffdf7a;
   border: 1px solid #d4af37;
-  padding: 14px 35px;
+  padding: 14px 30px;
   border-radius: 30px;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(97, 24, 24, 0.2);
   transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
-.family__btn-contact:hover {
+.family__btn-contact:hover,
+.family__btn-download:hover {
   transform: translateY(-2px) scale(1.03);
   background-color: #7a2222;
   box-shadow: 0 6px 18px rgba(97, 24, 24, 0.35);
 }
 
-.family__btn-contact:active {
+.family__btn-contact:active,
+.family__btn-download:active {
   transform: translateY(1px);
 }

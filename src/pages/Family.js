@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import ContactModal from '../components/ContactModal';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import posterImage from '../images/Picsart_26-07-02_13-43-04-396.jpg.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,8 +56,8 @@ function Family() {
       }
     );
 
-    // Fade in contact button
-    gsap.fromTo(el.querySelector('.family__btn-contact'),
+    // Fade in contact & download button group
+    gsap.fromTo(el.querySelector('.family__btn-group'),
       { opacity: 0, y: 20 },
       {
         opacity: 1,
@@ -64,8 +65,8 @@ function Family() {
         duration: 1,
         ease: 'power2.out',
         scrollTrigger: {
-          trigger: el.querySelector('.family__btn-contact'),
-          start: 'top 90%',
+          trigger: el.querySelector('.family__btn-group'),
+          start: 'top 95%',
           toggleActions: 'play none none none'
         }
       }
@@ -103,9 +104,18 @@ function Family() {
         />
       </div>
 
-      <button className="family__btn-contact" onClick={openModal}>
-        Contact Us
-      </button>
+      <div className="family__btn-group">
+        <button className="family__btn-contact" onClick={openModal}>
+          Contact Us
+        </button>
+        <a 
+          href={posterImage} 
+          download="Wedding_Invitation_Poster.jpeg" 
+          className="family__btn-download"
+        >
+          Download Invitation
+        </a>
+      </div>
 
       {isModalOpen && (
         <ContactModal closeModal={closeModal} />

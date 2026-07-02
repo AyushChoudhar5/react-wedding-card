@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import mainPhoto from '../images/photo.png'
+import mainPhoto from '../images/Screenshot 2026-07-02 140706.png'
 import { TbPlayerTrackPrevFilled, TbPlayerSkipBackFilled, TbPlayerSkipForwardFilled, TbPlayerTrackNextFilled } from "react-icons/tb";
 import { BsPlayCircle, BsStopCircle } from "react-icons/bs";
 import { GoHeartFill } from "react-icons/go";
@@ -121,7 +121,65 @@ function Cover({ startAnimation }) {
         </svg>
       </div>
 
-      <img className="cover__main-photo" src={mainPhoto} alt='weddingcouple'></img>
+      <div className="cover__image-frame-container">
+        {/* Pulsing golden aura background */}
+        <div className="cover__frame-glow-aura"></div>
+        
+        {/* Inner container with gold border and sheen sweep */}
+        <div className="cover__frame-inner-border">
+          <img className="cover__main-photo" src={mainPhoto} alt='weddingcouple' />
+        </div>
+
+        {/* Filigree corner ornaments */}
+        <svg className="cover__frame-corner cover__frame-corner--top-left" viewBox="0 0 50 50">
+          <defs>
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#D4AF37" />
+              <stop offset="25%" stopColor="#F3E5AB" />
+              <stop offset="50%" stopColor="#AA7C11" />
+              <stop offset="75%" stopColor="#FDF6C7" />
+              <stop offset="100%" stopColor="#B8860B" />
+            </linearGradient>
+          </defs>
+          <path d="M 50 2 L 2 2 L 2 50" fill="none" stroke="url(#goldGradient)" strokeWidth="2.5" strokeLinecap="round"/>
+          <path d="M 40 8 L 8 8 L 8 40" fill="none" stroke="url(#goldGradient)" strokeWidth="1" strokeLinecap="round"/>
+          <path d="M 2 2 C 15 15, 15 25, 25 25" fill="none" stroke="url(#goldGradient)" strokeWidth="1.5" strokeLinecap="round"/>
+          <path d="M 25 25 C 27 27, 28 32, 25 35 C 22 38, 17 35, 20 30 C 22 26, 28 28, 28 32" fill="none" stroke="url(#goldGradient)" strokeWidth="1" strokeLinecap="round"/>
+          <path d="M 2 2 C 15 15, 25 15, 25 25" fill="none" stroke="url(#goldGradient)" strokeWidth="1.5" strokeLinecap="round"/>
+          <path d="M 25 25 C 32 28, 35 22, 30 20 C 26 18, 28 28, 32 28" fill="none" stroke="url(#goldGradient)" strokeWidth="1" strokeLinecap="round"/>
+          <path d="M 12 12 Q 16 8 20 12 Q 16 16 12 12 Z" fill="url(#goldGradient)"/>
+        </svg>
+
+        <svg className="cover__frame-corner cover__frame-corner--top-right" viewBox="0 0 50 50">
+          <path d="M 50 2 L 2 2 L 2 50" fill="none" stroke="url(#goldGradient)" strokeWidth="2.5" strokeLinecap="round"/>
+          <path d="M 40 8 L 8 8 L 8 40" fill="none" stroke="url(#goldGradient)" strokeWidth="1" strokeLinecap="round"/>
+          <path d="M 2 2 C 15 15, 15 25, 25 25" fill="none" stroke="url(#goldGradient)" strokeWidth="1.5" strokeLinecap="round"/>
+          <path d="M 25 25 C 27 27, 28 32, 25 35 C 22 38, 17 35, 20 30 C 22 26, 28 28, 28 32" fill="none" stroke="url(#goldGradient)" strokeWidth="1" strokeLinecap="round"/>
+          <path d="M 2 2 C 15 15, 25 15, 25 25" fill="none" stroke="url(#goldGradient)" strokeWidth="1.5" strokeLinecap="round"/>
+          <path d="M 25 25 C 32 28, 35 22, 30 20 C 26 18, 28 28, 32 28" fill="none" stroke="url(#goldGradient)" strokeWidth="1" strokeLinecap="round"/>
+          <path d="M 12 12 Q 16 8 20 12 Q 16 16 12 12 Z" fill="url(#goldGradient)"/>
+        </svg>
+
+        <svg className="cover__frame-corner cover__frame-corner--bottom-left" viewBox="0 0 50 50">
+          <path d="M 50 2 L 2 2 L 2 50" fill="none" stroke="url(#goldGradient)" strokeWidth="2.5" strokeLinecap="round"/>
+          <path d="M 40 8 L 8 8 L 8 40" fill="none" stroke="url(#goldGradient)" strokeWidth="1" strokeLinecap="round"/>
+          <path d="M 2 2 C 15 15, 15 25, 25 25" fill="none" stroke="url(#goldGradient)" strokeWidth="1.5" strokeLinecap="round"/>
+          <path d="M 25 25 C 27 27, 28 32, 25 35 C 22 38, 17 35, 20 30 C 22 26, 28 28, 28 32" fill="none" stroke="url(#goldGradient)" strokeWidth="1" strokeLinecap="round"/>
+          <path d="M 2 2 C 15 15, 25 15, 25 25" fill="none" stroke="url(#goldGradient)" strokeWidth="1.5" strokeLinecap="round"/>
+          <path d="M 25 25 C 32 28, 35 22, 30 20 C 26 18, 28 28, 32 28" fill="none" stroke="url(#goldGradient)" strokeWidth="1" strokeLinecap="round"/>
+          <path d="M 12 12 Q 16 8 20 12 Q 16 16 12 12 Z" fill="url(#goldGradient)"/>
+        </svg>
+
+        <svg className="cover__frame-corner cover__frame-corner--bottom-right" viewBox="0 0 50 50">
+          <path d="M 50 2 L 2 2 L 2 50" fill="none" stroke="url(#goldGradient)" strokeWidth="2.5" strokeLinecap="round"/>
+          <path d="M 40 8 L 8 8 L 8 40" fill="none" stroke="url(#goldGradient)" strokeWidth="1" strokeLinecap="round"/>
+          <path d="M 2 2 C 15 15, 15 25, 25 25" fill="none" stroke="url(#goldGradient)" strokeWidth="1.5" strokeLinecap="round"/>
+          <path d="M 25 25 C 27 27, 28 32, 25 35 C 22 38, 17 35, 20 30 C 22 26, 28 28, 28 32" fill="none" stroke="url(#goldGradient)" strokeWidth="1" strokeLinecap="round"/>
+          <path d="M 2 2 C 15 15, 25 15, 25 25" fill="none" stroke="url(#goldGradient)" strokeWidth="1.5" strokeLinecap="round"/>
+          <path d="M 25 25 C 32 28, 35 22, 30 20 C 26 18, 28 28, 32 28" fill="none" stroke="url(#goldGradient)" strokeWidth="1" strokeLinecap="round"/>
+          <path d="M 12 12 Q 16 8 20 12 Q 16 16 12 12 Z" fill="url(#goldGradient)"/>
+        </svg>
+      </div>
       <div className='cover__person'>
         <div>Mr. Yogesh S Ugle</div>
         <GoHeartFill className='cover__icon-heart' size="0.8em" />
