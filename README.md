@@ -42,7 +42,7 @@ A beautiful, high-fidelity, interactive mobile wedding invitation web applicatio
 *   **File:** [Invitation.js](file:///e:/yogdip/react-wedding-card/src/pages/Invitation.js)
 *   **Description:** A heartfelt message inviting the guests to the ceremony. Includes a **Contact Us** button that displays a detailed phone list modal (with quick tap-to-call and tap-to-SMS shortcuts for mobile) and a link to download the high-resolution invitation poster.
 *   *Asset preview:*
-    <img src="./screenshots/4.png" width="260px" /> <img src="./screenshots/5.png" width="260px" />
+    <img src="./screenshots/4.png" width="260px" /> <img src="./screenshots/6.png" width="260px" />
 
 ### 5. Family & Blessings
 *   **File:** [Family.js](file:///e:/yogdip/react-wedding-card/src/pages/Family.js)
