@@ -96,7 +96,7 @@ function Quiz() {
                   <span>{language === 'mr' ? `प्रश्न ${currentQuestion + 1}` : `Question ${currentQuestion + 1}`}</span>/{questions.length}
                 </div>
                 <div className='question-text'>
-                  <div>Yogesh ♥ Dipali</div>
+                  <div>Rohan ♥ Priya</div>
                   <div>{questions[currentQuestion].questionText}</div>
                 </div>
             </div>

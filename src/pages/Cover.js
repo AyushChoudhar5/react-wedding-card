@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext';
-import mainPhoto from '../images/Screenshot 2026-07-02 140706.png'
+import mainPhoto from '../images/photo.png'
 import { TbPlayerTrackPrevFilled, TbPlayerSkipBackFilled, TbPlayerSkipForwardFilled, TbPlayerTrackNextFilled } from "react-icons/tb";
 import { BsPlayCircle, BsStopCircle } from "react-icons/bs";
 import { GoHeartFill } from "react-icons/go";

@@ -143,9 +143,9 @@ function Calendar() {
       </div>
       <div className="countdown__footer">
         {language === 'mr' ? (
-          <>योगेश ♥ दिपाली यांच्या लग्नाला अजून <span className='calendar__remain-day'>{timeLeft.days} दिवस</span> बाकी आहेत</>
+          <>रोहन ♥ प्रिया यांच्या लग्नाला अजून <span className='calendar__remain-day'>{timeLeft.days} दिवस</span> बाकी आहेत</>
         ) : (
-          <>The wedding of Yogesh ♥ Dipali is <span className='calendar__remain-day'>{timeLeft.days} days</span> away</>
+          <>The wedding of Rohan ♥ Priya is <span className='calendar__remain-day'>{timeLeft.days} days</span> away</>
         )}
       </div>
     </div>

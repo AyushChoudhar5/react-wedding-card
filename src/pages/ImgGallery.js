@@ -4,10 +4,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLanguage } from '../context/LanguageContext';
 
 // Import new screenshot assets
-import img1 from '../images/Screenshot 2026-07-02 144437.png';
-import img2 from '../images/Screenshot 2026-07-02 144446.png';
-import img3 from '../images/Screenshot 2026-07-02 144452.png';
-import img4 from '../images/Screenshot 2026-07-02 144512.png';
+import img1 from '../images/p1.png';
+import img2 from '../images/p2.png';
+import img3 from '../images/p3.png';
+import img4 from '../images/p4.png';
 
 import '../css/Gallery.css';
 

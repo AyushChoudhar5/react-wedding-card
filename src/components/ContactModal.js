@@ -6,8 +6,8 @@ import { HiMail } from "react-icons/hi";
 function ContactModal({ closeModal }) {
   const { t } = useLanguage();
   const contacts = [
-    { person: t('groomBrother'), phone: "7028835171" },
-    { person: t('groomName'), phone: "9545106897" }
+    { person: t('groomBrother'), phone: "9876543210" },
+    { person: t('groomName'), phone: "9876543211" }
   ];
 
   return (

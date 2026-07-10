@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 /**
- * LoveLetters — the "#YogDip" moment.
+ * LoveLetters — the "#RohPriya" moment.
  *
  * The whole moment now lives inside a single ornate card: a cream panel
  * with a hairline gold border and four bracket corners, like the frame
@@ -357,7 +357,7 @@ function LoveLetters() {
               '--ll-shimmer': `${50 + tilt.y * 1.4}%`,
             }}
           >
-            #YogDip
+            #RohPriya
           </div>
         </div>
 

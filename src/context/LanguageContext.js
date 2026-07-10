@@ -6,19 +6,19 @@ const translations = {
   en: {
     // Envelope
     envelopeTitle: "Wedding Invitation",
-    envelopeNames: "Yogesh & Dipali",
+    envelopeNames: "Rohan & Priya",
     envelopeDate: "July 7, 2026",
-    envelopePlace: "Alephata",
+    envelopePlace: "Nashik Road, Pune",
     envelopeInvite: "You are cordially invited",
     envelopeTap: "Tap to Open Envelope",
     
     // Cover
     coverEyebrow: "Two Hearts, One Beginning",
     coverMainTitle: "We Are Getting Married",
-    groomName: "Mr. Yogesh S Ugle",
-    brideName: "Ms. Dipali G Sable",
+    groomName: "Mr. Rohan S. Mehta",
+    brideName: "Ms. Priya K. Sharma",
     coverDate: "Tuesday, July 7, 2026 at 1:45 PM",
-    coverPlace: "Saileela Garden Mangal Karyalaya, Alephata",
+    coverPlace: "Saileela Gardens, Nashik Road, Pune",
     
     // Invitation
     invitationTitle: "You are Invited",
@@ -31,22 +31,22 @@ const translations = {
     
     // Family
     familyTitle: "With Blessings From",
-    groomDad: "Mr. Sakharam Ugle",
-    groomMom: "Mrs. Suman Ugle",
+    groomDad: "Mr. Suresh Mehta",
+    groomMom: "Mrs. Sunita Mehta",
     groomRelation: "Son",
-    groomLabel: "Groom: Yogesh S Ugle",
+    groomLabel: "Groom: Rohan S. Mehta",
     
-    brideDad: "Mr. Gabaji Sable",
-    brideMom: "Mrs. Sughandabai Sable",
+    brideDad: "Mr. Gopal Sharma",
+    brideMom: "Mrs. Sneha Sharma",
     brideRelation: "Daughter",
-    brideLabel: "Bride: Dipali G Sable",
+    brideLabel: "Bride: Priya K. Sharma",
     
     contactBtn: "Contact Us",
     downloadBtn: "Download Invitation",
     
     // Contact Modal
     contactTitle: "Contact Details",
-    groomBrother: "Mr. Mangesh S Ugle (Brother of Groom)",
+    groomBrother: "Mr. Amit S. Mehta (Brother of Groom)",
     backBtn: "Back",
     
     // Calendar
@@ -56,15 +56,15 @@ const translations = {
     hours: "Hours",
     mins: "Mins",
     secs: "Secs",
-    countdownFooter: "The wedding of Yogesh ♥ Dipali is {days} days away",
+    countdownFooter: "The wedding of Rohan ♥ Priya is {days} days away",
     weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     
     // Location
     locTitle: "Location & Directions",
-    locVenue: "Saileela Garden Mangal Karyalaya",
-    locAddr: "Nashik Road, Alephata",
+    locVenue: "Saileela Gardens",
+    locAddr: "Nashik Road, Pune",
     locMapBtn: "Open in Google Maps",
-    locHighway: "Located on the Pune-Nashik Highway",
+    locHighway: "Located on Nashik Road, Pune",
     
     // Events
     eventsTitle: "More Events",
@@ -78,7 +78,7 @@ const translations = {
     haldiName: "Haldi Ceremony",
     haldiDate: "Monday, July 6, 2026",
     haldiTime: "7:00 PM",
-    haldiLoc: "Groom's House, Shendiwadi",
+    haldiLoc: "Groom's House, Kothrud, Pune",
     
     // LoveLetters
     loveLettersSentence: "Please do attend our wedding and bless us with your warm presence as we begin our new journey together!",
@@ -107,8 +107,8 @@ const translations = {
     quizIncorrect: "Incorrect! {correctAnswer}",
     
     q1Text: "Which of the following is our honeymoon destination?",
-    q1Correct: "We are traveling to the UK and Spain.",
-    q1Options: ["Australia", "Canada", "Switzerland", "United Kingdom", "Spain"],
+    q1Correct: "We are traveling to Switzerland and Italy.",
+    q1Options: ["Australia", "Canada", "Switzerland", "Italy", "France"],
     
     q2Text: "Which country have we NOT traveled to together?",
     q2Correct: "We have never traveled to Vietnam together.",
@@ -164,19 +164,19 @@ const translations = {
   mr: {
     // Envelope
     envelopeTitle: "लग्नपत्रिका",
-    envelopeNames: "योगेश आणि दिपाली",
+    envelopeNames: "रोहन आणि प्रिया",
     envelopeDate: "७ जुलै, २०२६",
-    envelopePlace: "आळफाटा",
+    envelopePlace: "नाशिक रोड, पुणे",
     envelopeInvite: "आपल्याला आग्रहाचे आमंत्रण आहे",
     envelopeTap: "लिफाफा उघडण्यासाठी टॅप करा",
     
     // Cover
     coverEyebrow: "दोन मने, एक नवी सुरुवात",
     coverMainTitle: "आमचे लग्न ठरले आहे",
-    groomName: "श्री. योगेश स. उगले",
-    brideName: "कु. दिपाली ग. साबळे",
+    groomName: "श्री. रोहन स. मेहता",
+    brideName: "कु. प्रिया ग. शर्मा",
     coverDate: "मंगळवार, ७ जुलै, २०२६ दुपारी १:४५ वाजता",
-    coverPlace: "साईलीला गार्डन मंगल कार्यालय, आळफाटा",
+    coverPlace: "साईलीला गार्डन्स, नाशिक रोड, पुणे",
     
     // Invitation
     invitationTitle: "स्नेहभरे आमंत्रण",
@@ -189,22 +189,22 @@ const translations = {
     
     // Family
     familyTitle: "स्नेहकांक्षी व शुभ आशीर्वाद",
-    groomDad: "श्री. सखाराम उगले",
-    groomMom: "सौ. सुमन उगले",
+    groomDad: "श्री. सुरेश मेहता",
+    groomMom: "सौ. सुनीता मेहता",
     groomRelation: "सुपुत्र",
-    groomLabel: "वर: योगेश स. उगले",
+    groomLabel: "वर: रोहन स. मेहता",
     
-    brideDad: "श्री. गाबाजी साबळे",
-    brideMom: "सौ. सुगंधाबाई साबळे",
+    brideDad: "श्री. गोपाळ शर्मा",
+    brideMom: "सौ. स्नेहा शर्मा",
     brideRelation: "सुकन्या",
-    brideLabel: "वधू: दिपाली ग. साबळे",
+    brideLabel: "वधू: प्रिया ग. शर्मा",
     
     contactBtn: "संपर्क साधा",
     downloadBtn: "लग्नपत्रिका डाउनलोड करा",
     
     // Contact Modal
     contactTitle: "संपर्क तपशील",
-    groomBrother: "श्री. मंगेश स. उगले (वराचे बंधू)",
+    groomBrother: "श्री. अमित स. मेहता (वराचे बंधू)",
     backBtn: "मागे",
     
     // Calendar
@@ -214,15 +214,15 @@ const translations = {
     hours: "तास",
     mins: "मिनिटे",
     secs: "सेकंद",
-    countdownFooter: "योगेश ♥ दिपाली यांच्या लग्नाला अजून {days} दिवस बाकी आहेत",
+    countdownFooter: "रोहन ♥ प्रिया यांच्या लग्नाला अजून {days} दिवस बाकी आहेत",
     weekdays: ['रवि', 'सोम', 'मंगळ', 'बुध', 'गुरु', 'शुक्र', 'शनि'],
     
     // Location
     locTitle: "स्थान आणि मार्ग",
-    locVenue: "साईलीला गार्डन मंगल कार्यालय",
-    locAddr: "नाशिक रोड, आळफाटा",
+    locVenue: "साईलीला गार्डन्स",
+    locAddr: "नाशिक रोड, पुणे",
     locMapBtn: "गुगल मॅप्सवर पहा",
-    locHighway: "पुणे-नाशिक महामार्गावर स्थित",
+    locHighway: "नाशिक रोड, पुणे येथे स्थित",
     
     // Events
     eventsTitle: "इतर कार्यक्रम",
@@ -236,7 +236,7 @@ const translations = {
     haldiName: "हळद समारंभ",
     haldiDate: "सोमवार, ६ जुलै, २०२६",
     haldiTime: "संध्याकाळी ७:०० वाजता",
-    haldiLoc: "वराचे निवासस्थान, शेंडीवाडी",
+    haldiLoc: "वराचे निवासस्थान, कोथरूड, पुणे",
     
     // LoveLetters
     loveLettersSentence: "आम्ही आमच्या नवीन आयुष्याची सुरुवात करत असताना, आपण आमच्या विवाहास उपस्थित राहून आम्हाला आपल्या शुभाशीर्वादांनी उपकृत करावे, ही नम्र विनंती!",
@@ -265,8 +265,8 @@ const translations = {
     quizIncorrect: "चुकीचे! {correctAnswer}",
     
     q1Text: "खालीलपैकी आमचे हनिमून डेस्टिनेशन (Honeymoon Destination) कोणते आहे?",
-    q1Correct: "आम्ही युनायटेड किंगडम (UK) आणि स्पेनला जाणार आहोत.",
-    q1Options: ["ऑस्ट्रेलिया", "कॅनडा", "स्वित्झर्लंड", "युनायटेड किंगडम", "स्पेन"],
+    q1Correct: "आम्ही स्वित्झर्लंड आणि इटलीला जाणार आहोत.",
+    q1Options: ["ऑस्ट्रेलिया", "कॅनडा", "स्वित्झर्लंड", "इटली", "फ्रान्स"],
     
     q2Text: "आम्ही दोघांनी मिळून कोणत्या देशात एकत्र प्रवास केलेला नाही?",
     q2Correct: "आम्ही कधीही व्हिएतनामला एकत्र प्रवास केलेला नाही.",
